@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISCHICK CENTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://scontent.fceb8-1.fna.fbcdn.net/v/t39.30808-6/463976652_573744018663067_8087193179465995736_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG8MzWx80c6-Hw3TtuhHxK5SObcVgR2veRI5txWBHa95KaCFJn9dJDXOURWBbl0xktTEw7Zkrnu5mRwTE9o0w2B&_nc_ohc=T8kixf7oU2cQ7kNvgErS0P_&_nc_zt=23&_nc_ht=scontent.fceb8-1.fna&_nc_gid=AqUMIE93seKTAOl-4LJ4vBD&oh=00_AYBOV4-jYUv31ClFSEiHCAoz2zcbQdINTevylne3_q-MHA&oe=6779B2C6');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        header {
+            text-align: center;
+            background: rgba(44, 62, 80, 0.8);
+            color: white;
+            padding: 20px;
+        }
+        main {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .address {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+        .form-section {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BISCHICK CENTER FOR HONING AGRICULTURAL TECHNIQUES INCORPORATED</h1>
+        <p class="address">PUROK MAUSWAGON, POBLACION, TAMPAKAN SOUTH COTABATO, GENERAL SANTOS CITY</p>
+    </header>
+    <main>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="validateLogin()">Login</button>
+            <p id="error-message" class="error" style="display: none;">Invalid username or password. Please try again.</p>
+        </form>
+        <div id="form-section" class="form-section" style="display: none;">
+            <h2>Fill-Up Form</h2>
+            <form>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="secondName">Second Name:</label>
+                <input type="text" id="secondName" name="secondName">
+                <label for="middleInitial">Middle Initial:</label>
+                <input type="text" id="middleInitial" name="middleInitial">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="contactNumber">Contact Number:</label>
+                <input type="tel" id="contactNumber" name="contactNumber" required>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === 'admin' && password === 'admin123') {
+                errorMessage.style.display = 'none';
+                document.getElementById('form-section').style.display = 'block';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
